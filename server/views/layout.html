@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Our Photos</title>
+    <link rel="stylesheet" href="stylesheets/milligram.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="turn.js"></script>
+
+
+    <style type="text/css">
+      body{
+      	background:#ccc;
+      }
+      #magazine{
+      	width:1152px;
+      	height:752px;
+      }
+      #magazine .turn-page{
+      	background-color:#ccc;
+      	background-size:100% 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main" style="padding: 20px 20px">
+      <h1 class="milligram">Super Cool Demo App</h1>
+      <h2>Main Page</h2>
+      <div id="magazine">
+        <div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);">
+          <img src="https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg" alt="internalImage">
+        </div>
+      	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
+      	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
+      	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
+      	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
+      	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
+      </div>
+
+
+      <script type="text/javascript">
+
+      	$(window).ready(function() {
+      		$('#magazine').turn({
+      							display: 'double',
+      							acceleration: true,
+      							gradients: !$.isTouch,
+      							elevation:50,
+      							when: {
+      								turned: function(e, page) {
+      									/*console.log('Current view: ', $(this).turn('view'));*/
+      								}
+      							}
+      						});
+      	});
+
+
+      	$(window).bind('keydown', function(e){
+
+      		if (e.keyCode==37)
+      			$('#magazine').turn('previous');
+      		else if (e.keyCode==39)
+      			$('#magazine').turn('next');
+
+      	});
+
+      </script>
+    </div>
+    <footer id="footer">
+      <iframe width="100%" height="450" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/36467913%3Fsecret_token%3Ds-O8ko0&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+    </footer>
+  </body>
+
+</html>

@@ -5,3 +5,21 @@ body, h1, h2, h3, h4, h5 {
 .milligram {
   color: #9b4dca;
 }
+
+.spacer {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.background-white {
+  background: white;
+}
+
+img:hover{
+	opacity: 1;
+	transition: opacity 0.25s ease-in;
+
+	-webkit-transform: scale(1.5);
+	-webkit-transform: padding
+
+}

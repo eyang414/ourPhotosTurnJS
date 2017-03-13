@@ -10,21 +10,23 @@ const upload = multer({ dest: '../../uploads' })
 const paths = require('path')
 const fs = require('fs')
 
-
+let imageNumber = 0;
 
 router.get('/', function (req, res, next) {
   res.render('index');
 });
 
-router.get('/image.jpeg', function (req, res) {
+router.get('/uploads', function (req, res) {
     res.sendFile(paths.resolve('./uploads/image.jpeg'));
 });
 
 
 router.post('/uploads', upload.single('photo'), (req, res, next) => {
   console.log('here is req.file.path', req.file.path)
+  console.log('imagenumber', imageNumber)
+  imageNumber++;
   const tempPath = req.file.path;
-  const targetPath = paths.resolve('./uploads/image.jpeg');
+  const targetPath = paths.resolve(`./public/image${imageNumber}.jpeg`);
 
       fs.rename(tempPath, targetPath, function(err) {
           if (err) throw err;

@@ -1,12 +1,14 @@
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 
 const debug = require('debug');
 const express = require('express');
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
+
 
 const db = require('./db');
 const routes = require('./routes');
@@ -21,6 +23,7 @@ const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+app.set('uploadDir', '../uploads')
 app.engine('html', nunjucks.render);
 nunjucks.configure(app.get('views'), {
   noCache: true,

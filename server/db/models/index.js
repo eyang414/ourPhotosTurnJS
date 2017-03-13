@@ -5,7 +5,7 @@ const db = require('../db');
 
 const Photos = db.define('photos', {
   url: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING.BINARY,
     allowNull: false,
     defaultValue: 'https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300'
   }
@@ -23,4 +23,6 @@ const User = db.define('users', {
   password: Sequelize.STRING
 })
 
-module.exports = Photos, User;
+Photos.belongsTo(User, {as: "uploader"})
+
+module.exports = {Photos:Photos, User:User}

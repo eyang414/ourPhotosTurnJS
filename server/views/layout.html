@@ -17,7 +17,7 @@
       }
       #magazine{
       	width:1152px;
-      	height:752px;
+      	height:2500px;
       }
       #magazine .turn-page{
       	background-color:#ccc;
@@ -28,19 +28,31 @@
 
   <body>
     <div id="main" style="padding: 20px 20px">
-      <h1 class="milligram">Super Cool Demo App</h1>
-      <h2>Main Page</h2>
+      <h1 class="milligram">Check out your photo album</h1>
+      <form enctype="multipart/form-data" action="/uploads" method="POST">
+        <input id="image-file" type="file" name="photo" />
+        <input name="themes" type="text" />
+        <button type="submit" value="Submit">Submit</button>
+      </form>
       <div id="magazine">
         <div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);">
+          <img src="/image.jpeg" alt="possiblePhoto">
+          <img src="https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg" alt="internalImage">
+          <img src="http://static.boredpanda.com/blog/wp-content/uploads/2016/08/cute-kittens-30-57b30ad41bc90__605.jpg" alt="internalImage">
           <img src="https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg" alt="internalImage">
         </div>
       	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
+          <img src="data:image/gif;base64,xxxxxxxxxxxxx...">
       	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
       	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
       	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
       	<div style="background-image:url(https://i.ytimg.com/vi/8HVWitAW-Qg/hqdefault.jpg);"></div>
       </div>
 
+      <script type="text/javascript">
+
+
+      </script>
 
       <script type="text/javascript">
 

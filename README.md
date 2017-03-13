@@ -7,3 +7,6 @@ Currently uses:
 Working on:
   - Uploading images
   - SoundCloud music search to match with album theme
+
+Will work on:
+  - UI/UX
